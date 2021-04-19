@@ -2,10 +2,7 @@ function IsWindows {
     return ($env:OS -eq "Windows_NT")
 }
 
-if (IsWindows) {
-Import-Module PSColors
-}
-
+Import-Module Get-ChildItemColor
 Import-Module posh-git
 Import-Module oh-my-posh
 
@@ -18,10 +15,10 @@ if (-not (Test-Path alias:ls)) {
 }
 
 function gciw {
-    Get-ChildItem @args | Format-Wide
+    Get-ChildItemColorFormatWide @args
 }
 
-New-Alias -Name lsw -Value gciw
+New-Alias -Name lsw -Value gciw -Force
 
 if (Test-Path "$home\.pwsh_extra.ps1") {
     . "$home\.pwsh_extra.ps1"

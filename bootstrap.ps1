@@ -25,7 +25,7 @@ function Link([string]$link, [string]$target) {
 
 function ModuleInstall([string]$module) {
     if ( -not (Get-Module -ListAvailable -Name $module)) {
-        Install-Module $module -scope CurrentUser
+        Install-Module $module @args
     } 
 }
 
@@ -63,9 +63,7 @@ Write-Host "Installing modules"
 Set-PSRepository PSGallery -InstallationPolicy Trusted
 ModuleInstall "posh-git" -Scope CurrentUser
 ModuleInstall "oh-my-posh" -Scope CurrentUser
-if (IsWindows) {
-    ModuleInstall pscolors -Scope CurrentUser -AllowClobber
-}
+ModuleInstall "Get-ChildItemColor" -Scope CurrentUser -AllowClobber
 
 Write-Host "Installing fonts"
 Install-Font (Get-Item "fonts").FullName
