@@ -40,7 +40,7 @@
           "properties": {
             "display_user": false
           }
-        },
+        },        
         {
           "background": "#91ddff",
           "foreground": "#100e23",
@@ -70,6 +70,23 @@
         }
       ],
       "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "kubectl",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4 ",
+          "leading_diamond": "\uE0B6",
+          "foreground": "#ffffff",
+          "background": "#FF6471",
+          "properties": {
+            "template": "{{ index (splitList \".\" .Context) 0 }}"
+          }
+        }
+      ],
+      "type":"rprompt"
     }
   ],
   "final_space": true,
