@@ -2,7 +2,6 @@ function IsWindows {
     return ($env:OS -eq "Windows_NT")
 }
 
-Import-Module Get-ChildItemColor
 Import-Module posh-git
 Import-Module oh-my-posh
 
@@ -15,7 +14,7 @@ if (-not (Test-Path alias:ls)) {
 }
 
 function gciw {
-    Get-ChildItemColorFormatWide @args
+    Get-ChildItem @args | Format-Wide
 }
 
 New-Alias -Name lsw -Value gciw -Force
