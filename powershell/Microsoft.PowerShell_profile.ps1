@@ -3,7 +3,7 @@ function IsWindows {
 }
 
 if (IsWindows) {
-    Import-Module PSColors
+Import-Module PSColors
 }
 
 Import-Module posh-git
@@ -13,7 +13,7 @@ Set-PoshPrompt -Theme "$home\.poshthemes\private.omp.json"
 
 if (-not (Test-Path alias:ls)) {
     function ls {
-        &(get-command -name ls -CommandType Application | select-object -index 0) --color       
+        &(get-command -name ls -CommandType Application | select-object -index 0) --color $args
     }
 }
 
