@@ -67,5 +67,5 @@ Write-Host "Installing fonts"
 Install-Font (Get-Item "fonts").FullName
 
 Write-Host "Linking files"
-Link $home/.poshthemes (Get-Item "powershell/poshthemes").FullName
+Link $home/.poshthemes (Get-Item "poshthemes").FullName
 Link $Global:profile (Get-Item "powershell/Microsoft.PowerShell_profile.ps1").FullName
