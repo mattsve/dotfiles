@@ -46,7 +46,7 @@
           "background": "#0077c2",
           "powerline_symbol": "",
           "style": "powerline",
-          "type": "poshgit"
+          "type": "git"
         },
         {
           "background": "#ff8080",
@@ -64,5 +64,6 @@
   ],
   "final_space": true,
   "console_title": true,
-  "console_title_style": "folder"
+  "console_title_style": "template",
+  "console_title_template": "{{.Env.TITLEEXTRA}}{{ .Host }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}"
 }
