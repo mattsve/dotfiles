@@ -63,7 +63,9 @@ Write-Host "Installing modules"
 Set-PSRepository PSGallery -InstallationPolicy Trusted
 ModuleInstall "posh-git" -Scope CurrentUser
 ModuleInstall "oh-my-posh" -Scope CurrentUser
-install-module pscolors -Scope CurrentUser -AllowClobber
+if (IsWindows) {
+    ModuleInstall pscolors -Scope CurrentUser -AllowClobber
+}
 
 Write-Host "Installing fonts"
 Install-Font (Get-Item "fonts").FullName
