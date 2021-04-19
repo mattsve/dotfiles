@@ -60,8 +60,10 @@ if ($(IsElevated) -eq $false) {
 }
 
 Write-Host "Installing modules"
-ModuleInstall "posh-git"
-ModuleInstall "oh-my-posh"
+Set-PSRepository PSGallery -InstallationPolicy Trusted
+ModuleInstall "posh-git" -Scope CurrentUser
+ModuleInstall "oh-my-posh" -Scope CurrentUser
+install-module pscolors -Scope CurrentUser -AllowClobber
 
 Write-Host "Installing fonts"
 Install-Font (Get-Item "fonts").FullName
