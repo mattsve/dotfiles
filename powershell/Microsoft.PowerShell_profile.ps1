@@ -17,6 +17,12 @@ if (-not (Test-Path alias:ls)) {
     }
 }
 
+function gciw {
+    Get-ChildItem @args | Format-Wide
+}
+
+New-Alias -Name lsw -Value gciw
+
 if (Test-Path "$home\.pwsh_extra.ps1") {
     . "$home\.pwsh_extra.ps1"
 }
