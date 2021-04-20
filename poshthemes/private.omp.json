@@ -86,5 +86,5 @@
   "final_space": true,
   "console_title": true,
   "console_title_style": "template",
-  "console_title_template": "{{.Env.POSH_EXTRA}}{{ .Host }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}"
+  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .Host }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}"
 }
