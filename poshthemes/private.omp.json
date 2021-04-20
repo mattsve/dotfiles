@@ -73,6 +73,7 @@
           "foreground": "#ffffff",
           "powerline_symbol": "",
           "properties": {
+            "prefix": " ",
             "always_numeric": true
           },
           "style": "powerline",
