@@ -19,6 +19,15 @@ function gciw {
 
 New-Alias -Name lsw -Value gciw -Force
 
+$dotfilesFolder = (Get-Item $MyInvocation.MyCommand.Definition).Target | Split-Path | Split-Path
+foreach ($f in (Get-ChildItem $dotfilesFolder -Filter *.ps1 -Recurse)) {
+    if ($f.FullName -eq (Join-Path $dotfilesFolder "bootstrap.ps1")) { continue }
+    if ((Split-Path $f.FullName) -eq (Join-Path $dotfilesFolder "scripts")) { continue }
+    if ($f.FullName -eq (Join-Path $dotfilesFolder "powershell" "Microsoft.PowerShell_profile.ps1")) { continue }
+    
+    . "$f"
+}
+
 if (Test-Path "$home\.pwsh_extra.ps1") {
     . "$home\.pwsh_extra.ps1"
 }
