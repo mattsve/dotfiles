@@ -11,4 +11,20 @@ function New-Solution {
     }
 }
 
-New-Alias -Name New-Sln -Value New-Solution
+function Open-Solution {
+    param (
+        [Parameter(Position = 0, Mandatory = $true)]
+        [string]$Path
+    )
+
+    $solutions = Get-ChildItem -Filter *.sln -Path $path
+    if ($solutions.Count -ne 1) {
+        Write-Error "Zero or more than one solution found"
+        return 1
+    }
+
+    & ($solutions[0].FullName)
+}
+
+New-Alias -Name New-Sln -Value New-Solution -Force
+New-Alias -Name Open-Sln -Value Open-Solution -Force
