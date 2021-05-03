@@ -30,6 +30,7 @@ foreach ($f in (Get-ChildItem $dotfilesFolder -Filter *.ps1 -Recurse)) {
 
 if (Get-Command "thefuck" -ErrorAction SilentlyContinue) {
     Invoke-Expression "$(thefuck --alias)"
+    New-Alias -Name Correct-Me -Value fuck -Force
 }
 
 if (Test-Path "$home\.pwsh_extra.ps1") {
