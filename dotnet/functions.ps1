@@ -12,18 +12,22 @@ function New-Solution {
 }
 
 function Open-Solution {
+    [CmdletBinding()]
     param (
         [Parameter(Position = 0, Mandatory = $true)]
         [string]$Path
     )
 
-    $solutions = Get-ChildItem -Filter *.sln -Path $path
-    if ($solutions.Count -ne 1) {
-        Write-Error "Zero or more than one solution found"
-        return 1
+    try {
+        $solutions = Get-ChildItem -Filter *.sln -Path $path
+        if ($solutions.Count -ne 1) {                
+            Throw "$($solutions.Count) solutions found"        
+        }
+        & ($solutions[0].FullName)
     }
-
-    & ($solutions[0].FullName)
+    catch  {
+        $PSCmdlet.WriteError($_)
+    }
 }
 
 New-Alias -Name New-Sln -Value New-Solution -Force
