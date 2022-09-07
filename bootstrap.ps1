@@ -39,6 +39,25 @@ function Install-Font([string]$font) {
     }
 }
 
+function Install-OhMyPosh() {
+    if (IsWindows) {
+        & winget install JanDeDobbeleer.OhMyPosh -s winget
+    } else {
+        $architecture = uname -m
+        if ($architecture -eq "x86_64") {
+            $architecture = "amd64"
+        } elseif ($architecture -eq "aarch64") {
+            $architecture = "arm64"
+        } else {
+            Write-Error "Cannot install OhMyPosh"
+        }
+        
+        New-Item -ItemType Directory -Force -Path $home/bin
+        Invoke-WebRequest -Uri "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-$architecture" -OutFile "$home/bin/oh-my-posh"
+        & chmod +x "$home/bin/oh-my-posh"
+    }
+}
+
 function IsElevated {
     if (IsWindows) {
         return ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')

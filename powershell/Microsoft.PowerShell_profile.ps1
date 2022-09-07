@@ -3,9 +3,13 @@ function IsWindows {
 }
 
 Import-Module posh-git
-Import-Module oh-my-posh
 
-Set-PoshPrompt -Theme "$home\.poshthemes\private.omp.json"
+if (Get-Command "oh-my-posh" -ErrorAction SilentlyContinue) {
+    oh-my-posh init pwsh --config "$home\.poshthemes\private.omp.json" | Invoke-Expression
+} else {
+    Import-Module oh-my-posh
+    Set-PoshPrompt -Theme "$home\.poshthemes\private.omp.json"
+}
 
 if (-not (Test-Path alias:ls)) {
     function ls {
