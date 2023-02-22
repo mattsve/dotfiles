@@ -11,6 +11,8 @@ if (Get-Command "oh-my-posh" -ErrorAction SilentlyContinue) {
     Set-PoshPrompt -Theme "$home\.poshthemes\private.omp.json"
 }
 
+$env:POSH_GIT_ENABLED = $true
+
 if (-not (Test-Path alias:ls)) {
     function ls {
         &(get-command -name ls -CommandType Application | select-object -index 0) --color $args

@@ -81,7 +81,9 @@ if ($(IsElevated) -eq $false) {
 Write-Host "Installing modules"
 Set-PSRepository PSGallery -InstallationPolicy Trusted
 ModuleInstall "posh-git" -Scope CurrentUser
-ModuleInstall "oh-my-posh" -Scope CurrentUser
+
+Write-Host "Installing OhMyPosh"
+Install-OhMyPosh
 
 Write-Host "Installing fonts"
 Install-Font (Get-Item "fonts").FullName
