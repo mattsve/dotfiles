@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .HostName }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}",
+  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .HostName }}{{if .Root}} :: root{{end}} :: {{ .PWD }} :: {{.Shell}}",
   "blocks": [
     {
       "alignment": "left",
