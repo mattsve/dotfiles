@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .HostName }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}",
   "blocks": [
     {
       "alignment": "left",
@@ -24,14 +25,12 @@
           "type": "root"
         },
         {
-          "background": "#ffffff",
+          "background": "#ffeabb",
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
-          "properties": {
-            "var_name": "POSH_EXTRA"
-          },
           "style": "powerline",
-          "type": "envvar"
+          "type": "text",
+          "template": "{{ .Env.POSH_EXTRA }}"
         },
         {
           "background": "#ffffff",
@@ -48,11 +47,9 @@
           "background": "#FF6471",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "properties": {
-            "var_name": "POSH_CONTEXT"
-          },
           "style": "powerline",
-          "type": "envvar"
+          "type": "text",
+          "template": "{{ .Env.POSH_CONTEXT }}"
         },
         {
           "background": "#91ddff",
@@ -85,7 +82,6 @@
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .Host }}{{if .Root}} :: root{{end}} :: {{ .Folder }} :: {{.Shell}}",
   "final_space": true,
   "version": 2
 }
