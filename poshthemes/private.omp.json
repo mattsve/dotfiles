@@ -3,85 +3,103 @@
   "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ .HostName }}{{if .Root}} :: root{{end}} :: {{ .PWD }} :: {{.Shell}}",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "background": "#ffd899",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "type": "os"
+          "background": "#ffd899",
+          "type": "os",
+          "style": "powerline"
         },
         {
-          "background": "#ffe9aa",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
           "properties": {
+            "cache_duration": "none",
             "root_icon": "\u221a"
           },
-          "style": "powerline",
           "template": " \uf0e7 ",
-          "type": "root"
-        },
-        {
-          "background": "#ffeabb",
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "type": "text",
-          "template": "{{ .Env.POSH_EXTRA }}"
+          "background": "#ffe9aa",
+          "type": "root",
+          "style": "powerline"
         },
         {
-          "background": "#ffffff",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .Env.POSH_EXTRA }}",
+          "foreground": "#100e23",
+          "powerline_symbol": "\ue0b0",
+          "background": "#ffeabb",
+          "type": "text",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
             "display_user": false
           },
-          "style": "powerline",
           "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .HostName }} ",
-          "type": "session"
-        },
-        {
-          "background": "#FF6471",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "type": "text",
-          "template": "{{ .Env.POSH_CONTEXT }}"
-        },
-        {
-          "background": "#91ddff",
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
+          "background": "#ffffff",
+          "type": "session",
+          "style": "powerline"
+        },
+        {
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .Env.POSH_CONTEXT }}",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "background": "#FF6471",
+          "type": "text",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
             "style": "mixed"
           },
-          "style": "powerline",
           "template": " {{ .Path }} ",
-          "type": "path"
+          "foreground": "#100e23",
+          "powerline_symbol": "\ue0b0",
+          "background": "#91ddff",
+          "type": "path",
+          "style": "powerline"
         },
         {
-          "background": "#0077c2",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "style": "powerline",
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
-          "type": "git"
-        },
-        {
-          "background": "#ff8080",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
+          "background": "#0077c2",
+          "type": "git",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": " \ue20f{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} ",
-          "type": "exit"
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "background": "#ff8080",
+          "type": "exit",
+          "style": "powerline"
         }
-      ],
-      "type": "prompt"
+      ]
     }
   ],
-  "final_space": true,
-  "version": 2
+  "version": 3,
+  "final_space": true
 }
