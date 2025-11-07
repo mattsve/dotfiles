@@ -36,3 +36,5 @@ if [[ ! "$(defaults read com.apple.dock persistent-apps)" == "(
     defaults write com.apple.dock persistent-apps -array '()'
     killall Dock
 fi
+
+echo "Done!"
