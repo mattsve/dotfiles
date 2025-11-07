@@ -1,3 +1,5 @@
+brew "oh-my-posh"
+
 cask "1password"
 cask "visual-studio-code"
 cask "microsoft-teams"
