@@ -1,2 +1,4 @@
 cask "1password"
 cask "visual-studio-code"
+cask "microsoft-teams"
+cask "wezterm"

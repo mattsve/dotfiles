@@ -20,5 +20,11 @@ if [[ ! -d "${HOME}/.dotfiles/" ]]; then
     exit 0;
 fi
 
+if [[ ! -f "/etc/pam.d/sudo_local" ]]; then
+    sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+fi
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 brew bundle install --file "${SCRIPT_DIR}/Brewfile"
+
+"${SCRIPT_DIR}/../.config/install.sh"
