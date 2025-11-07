@@ -1,1 +1,1 @@
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mattsve/dotfiles/refs/heads/main/darwin/install.sh)"
