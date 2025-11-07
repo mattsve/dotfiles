@@ -31,6 +31,8 @@ brew bundle install --file "${SCRIPT_DIR}/Brewfile"
 "${SCRIPT_DIR}/../applications/install.sh"
 
 echo "Setting up dock"
-if ! defaults read com.apple.dock static-only &> /dev/null; then
-    defaults write com.apple.dock static-only -bool true; killall Dock
+if [[ ! "$(defaults read com.apple.dock persistent-apps)" == "(
+)" ]]; then
+    defaults write com.apple.dock persistent-apps -array '()'
+    killall Dock
 fi
