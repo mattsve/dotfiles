@@ -1,0 +1,7 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.minimumContrastRatio": 1,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Catppuccin Frappé"
+}

@@ -2,3 +2,7 @@ cask "1password"
 cask "visual-studio-code"
 cask "microsoft-teams"
 cask "wezterm"
+
+mas "1Password for Safari", id: 1569813296
+
+vscode "catppuccin.catppuccin-vsc"
