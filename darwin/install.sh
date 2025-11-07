@@ -29,3 +29,8 @@ brew bundle install --file "${SCRIPT_DIR}/Brewfile"
 
 "${SCRIPT_DIR}/../.config/install.sh"
 "${SCRIPT_DIR}/../applications/install.sh"
+
+echo "Setting up dock"
+if ! defaults read com.apple.dock static-only &> /dev/null; then
+    defaults write com.apple.dock static-only -bool true; killall Dock
+fi
