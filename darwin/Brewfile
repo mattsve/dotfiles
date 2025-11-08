@@ -1,3 +1,5 @@
+tap "isen-ng/dotnet-sdk-versions"
+
 brew "oh-my-posh"
 brew "kubernetes-cli"
 brew "zsh-autosuggestions"
@@ -19,6 +21,8 @@ cask "moom"
 cask "spotify"
 cask "onedrive"
 cask "jordanbaird-ice"
+cask "dotnet-sdk"
+# cask "dotnet-sdk9"
 
 mas "1Password for Safari", id: 1569813296
 
