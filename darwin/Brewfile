@@ -25,6 +25,7 @@ cask "dotnet-sdk"
 # cask "dotnet-sdk9"
 cask "jetbrains-toolbox"
 cask "notion"
+cask "alfred"
 
 mas "1Password for Safari", id: 1569813296
 
