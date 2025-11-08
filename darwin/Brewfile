@@ -23,7 +23,9 @@ cask "onedrive"
 cask "jordanbaird-ice"
 cask "dotnet-sdk"
 # cask "dotnet-sdk9"
+cask "jetbrains-toolbox"
 
 mas "1Password for Safari", id: 1569813296
 
 vscode "catppuccin.catppuccin-vsc"
+vscode "ms-mssql.mssql"
