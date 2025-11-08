@@ -24,6 +24,7 @@ cask "jordanbaird-ice"
 cask "dotnet-sdk"
 # cask "dotnet-sdk9"
 cask "jetbrains-toolbox"
+cask "notion"
 
 mas "1Password for Safari", id: 1569813296
 
