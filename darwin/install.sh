@@ -20,10 +20,17 @@ if [[ ! -d "${HOME}/.dotfiles/" ]]; then
     exit 0;
 fi
 
+echo "Setting up sudo to use touch id"
 if [[ ! -f "/etc/pam.d/sudo_local" ]]; then
     sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 fi
 
+echo "Setting up rosetta"
+if [[ ! -f "/Library/Apple/usr/libexec/oah/libRosettaRuntime" ]]; then
+    softwareupdate --install-rosetta --agree-to-license
+fi
+
+echo "Installing brew packages"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 brew bundle install --file "${SCRIPT_DIR}/Brewfile"
 
