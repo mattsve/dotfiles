@@ -45,7 +45,7 @@
             "cache_duration": "none",
             "display_user": false
           },
-          "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .HostName }} ",
+          "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ splitList \".\" .HostName | first }} ",
           "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
           "background": "#ffffff",
