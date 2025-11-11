@@ -17,6 +17,9 @@ config.default_cursor_style = 'BlinkingBlock'
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 
+config.send_composed_key_when_left_alt_is_pressed = true
+config.send_composed_key_when_right_alt_is_pressed = true
+
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.font_size = 14.0
 
