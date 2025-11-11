@@ -29,6 +29,7 @@ cask "alfred"
 cask "microsoft-outlook"
 cask "alt-tab"
 cask "scroll-reverser"
+cask "google-chrome"
 
 mas "1Password for Safari", id: 1569813296
 mas "Wipr 2", id: 1662217862
