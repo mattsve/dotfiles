@@ -18,5 +18,6 @@ config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.font_size = 14.0
 
 return config
