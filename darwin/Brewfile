@@ -11,6 +11,8 @@ brew "argocd"
 brew "k9s"
 brew "podman"
 brew "htop"
+brew "thefuck"
+brew "gh"
 
 cask "1password"
 cask "1password-cli"
