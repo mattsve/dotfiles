@@ -3,11 +3,5 @@
   "editor.semanticHighlighting.enabled": true,
   "terminal.integrated.minimumContrastRatio": 1,
   "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Catppuccin Frappé",
-  "mssql.connectionGroups": [
-    {
-      "name": "ROOT",
-      "id": "56F1E1B4-FB05-48A4-9A37-5FEC937FE186"
-    }
-  ]
+  "workbench.colorTheme": "Catppuccin Frappé"
 }
