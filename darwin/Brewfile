@@ -2,7 +2,6 @@ tap "isen-ng/dotnet-sdk-versions"
 
 brew "mas"
 brew "oh-my-posh"
-brew "kubernetes-cli"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "kubernetes-cli"
