@@ -37,6 +37,7 @@ cask "ukelele"
 cask "dbeaver-community"
 cask "bruno"
 cask "linqpad"
+cask "vial"
 
 mas "1Password for Safari", id: 1569813296
 mas "Wipr 2", id: 1662217862
