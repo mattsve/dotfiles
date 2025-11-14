@@ -48,6 +48,10 @@ if ! defaults read com.apple.dock appswitcher-all-displays &> /dev/null; then
     defaults write com.apple.dock appswitcher-all-displays -bool true
     KILL_DOCK=true
 fi
+if ! defaults read com.apple.dock show-recents &> /dev/null; then
+    defaults write com.apple.dock show-recents -bool false
+    KILL_DOCK=true
+fi
 if $KILL_DOCK; then
     killall Dock
 fi 
