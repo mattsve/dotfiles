@@ -22,7 +22,6 @@ cask "wezterm"
 cask "moom"
 cask "spotify"
 cask "onedrive"
-cask "jordanbaird-ice"
 cask "dotnet-sdk"
 cask "dotnet-sdk9"
 cask "jetbrains-toolbox"
@@ -38,6 +37,8 @@ cask "bruno"
 cask "linqpad"
 cask "vial"
 cask "xsplit-vcam"
+cask "alcove"
+cask "bartender"
 
 mas "1Password for Safari", id: 1569813296
 mas "Wipr 2", id: 1662217862
