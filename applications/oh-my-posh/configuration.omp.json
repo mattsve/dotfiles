@@ -1,6 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ splitList \".\" .HostName | first }}{{if .Root}} :: root{{end}} :: {{ .PWD }} :: {{.Shell}}",
+  "palette": {
+        "os": "#ACB0BE",
+        "pink": "#F5BDE6",
+        "violet": "#D9C2F2",
+        "lavender": "#B7BDF8",
+        "blue":  "#8AADF4",
+        "wight": "#FFFFFF",
+        "text": "#494D64"
+  },
   "blocks": [
     {
       "type": "prompt",
@@ -10,33 +19,22 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
-          "background": "#ffd899",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "foreground": "p:wight",
+          "powerline_symbol": "\ue0b4",
+          "leading_diamond": "\ue0b6",
+          "background": "p:blue",
           "type": "os",
-          "style": "powerline"
-        },
-        {
-          "properties": {
-            "cache_duration": "none",
-            "root_icon": "\u221a"
-          },
-          "template": " \uf0e7 ",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
-          "background": "#ffe9aa",
-          "type": "root",
-          "style": "powerline"
+          "style": "diamond"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
           "template": "{{ .Env.POSH_EXTRA }}",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
-          "background": "#ffeabb",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:blue",
           "type": "text",
           "style": "powerline"
         },
@@ -46,20 +44,20 @@
             "display_user": false
           },
           "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ splitList \".\" .HostName | first }} ",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
-          "background": "#ffffff",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:blue",
           "type": "session",
-          "style": "powerline"
+          "style": "diamond"
         },
         {
           "properties": {
             "cache_duration": "none"
           },
           "template": "{{ .Env.POSH_CONTEXT }}",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "background": "#FF6471",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:pink", 
           "type": "text",
           "style": "powerline"
         },
@@ -69,9 +67,9 @@
             "style": "mixed"
           },
           "template": " {{ .Path }} ",
-          "foreground": "#100e23",
-          "powerline_symbol": "\ue0b0",
-          "background": "#91ddff",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:violet",
           "type": "path",
           "style": "powerline"
         },
@@ -82,9 +80,9 @@
             "fetch_push_status": true
           },
           "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "background": "#0077c2",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:lavender",
           "type": "git",
           "style": "powerline"
         },
@@ -94,7 +92,7 @@
           },
           "template": " \ue20f{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} ",
           "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "\ue0b4",
           "background": "#ff8080",
           "type": "exit",
           "style": "powerline"

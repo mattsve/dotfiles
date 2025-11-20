@@ -6,9 +6,9 @@ config.initial_rows = 30
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Catppuccin Macchiato"
-  else
     return "Catppuccin Frappe"
+  else
+    return "Catppuccin Latte"
   end
 end
 
