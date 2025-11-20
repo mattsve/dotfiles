@@ -23,6 +23,7 @@ config.send_composed_key_when_right_alt_is_pressed = true
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.font_size = 14.0
 config.window_frame = {
-  font_size = 14.0,
+  font_size = 14.0
 }
+config.use_fancy_tab_bar = false
 return config
