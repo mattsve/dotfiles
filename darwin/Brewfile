@@ -43,6 +43,7 @@ cask "bartender"
 cask "steam"
 cask "keymapp"
 cask "bambu-studio"
+cask "netnewswire"
 
 mas "1Password for Safari", id: 1569813296
 mas "Wipr 2", id: 1662217862
