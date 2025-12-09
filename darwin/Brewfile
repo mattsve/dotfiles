@@ -45,6 +45,7 @@ cask "steam"
 cask "keymapp"
 cask "bambu-studio"
 cask "netnewswire"
+cask "heynote"
 
 mas "WireGuard", id: 1451685025
 
