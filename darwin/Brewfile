@@ -46,6 +46,7 @@ cask "keymapp"
 cask "bambu-studio"
 cask "netnewswire"
 cask "heynote"
+cask "karabiner-elements"
 
 mas "WireGuard", id: 1451685025
 
