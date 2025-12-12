@@ -1,34 +1,34 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ splitList \".\" .HostName | first }}{{if .Root}} :: root{{end}} :: {{ .PWD }} :: {{.Shell}}",
   "palette": {
-        "os": "#ACB0BE",
-        "pink": "#F5BDE6",
-        "violet": "#D9C2F2",
-        "lavender": "#B7BDF8",
-        "blue":  "#8AADF4",
-        "wight": "#FFFFFF",
-        "text": "#494D64"
+    "blue": "#8AADF4",
+    "lavender": "#B7BDF8",
+    "os": "#ACB0BE",
+    "pink": "#F5BDE6",
+    "text": "#494D64",
+    "violet": "#D9C2F2",
+    "wight": "#FFFFFF"
   },
+  "console_title_template": "{{if .Env.POSH_EXTRA}}{{.Env.POSH_EXTRA}} :: {{end}}{{ splitList \".\" .HostName | first }}{{if .Root}} :: root{{end}} :: {{ .PWD }} :: {{.Shell}}",
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
+          "leading_diamond": "\ue0b6",
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "foreground": "p:wight",
           "powerline_symbol": "\ue0b4",
-          "leading_diamond": "\ue0b6",
           "background": "p:blue",
           "type": "os",
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ .Env.POSH_EXTRA }}",
@@ -39,7 +39,7 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_user": false
           },
@@ -51,18 +51,18 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ .Env.POSH_CONTEXT }}",
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
-          "background": "p:pink", 
+          "background": "p:pink",
           "type": "text",
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "style": "mixed"
           },
@@ -74,10 +74,10 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
-            "fetch_status": true,
-            "fetch_push_status": true
+            "fetch_push_status": true,
+            "fetch_status": true
           },
           "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
           "foreground": "p:text",
@@ -87,7 +87,7 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " \ue20f{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} ",
@@ -100,6 +100,6 @@
       ]
     }
   ],
-  "version": 3,
+  "version": 4,
   "final_space": true
 }

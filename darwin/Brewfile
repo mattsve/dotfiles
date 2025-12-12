@@ -47,7 +47,9 @@ cask "bambu-studio"
 cask "netnewswire"
 cask "heynote"
 cask "karabiner-elements"
+cask "shortcat"
 
 mas "WireGuard", id: 1451685025
 
 vscode "catppuccin.catppuccin-vsc"
+vscode "mechatroner.rainbow-csv"
