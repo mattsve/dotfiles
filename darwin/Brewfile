@@ -1,4 +1,5 @@
 tap "isen-ng/dotnet-sdk-versions"
+tap "FelixKratz/formulae"
 
 brew "mas"
 brew "oh-my-posh"
@@ -12,6 +13,7 @@ brew "podman"
 brew "htop"
 brew "thefuck"
 brew "gh"
+brew "borders"
 
 cask "1password"
 cask "1password-cli"
