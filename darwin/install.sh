@@ -41,19 +41,34 @@ echo "Setting up dock"
 KILL_DOCK=false
 if [[ ! "$(defaults read com.apple.dock persistent-apps)" == "(
 )" ]]; then
-    defaults write com.apple.dock persistent-apps -array '()'
+    defaults write com.apple.dock persistent-apps -array
+    echo "  Cleared persistent apps"
     KILL_DOCK=true
 fi
 if ! defaults read com.apple.dock appswitcher-all-displays &> /dev/null; then
     defaults write com.apple.dock appswitcher-all-displays -bool true
+    echo "  Enabled app switcher on all displays"
     KILL_DOCK=true
 fi
 if ! defaults read com.apple.dock show-recents &> /dev/null; then
     defaults write com.apple.dock show-recents -bool false
+    echo "  Disabled recent applications"
+    KILL_DOCK=true
+fi
+if ! defaults read com.apple.dock autohide &> /dev/null; then
+    defaults write com.apple.dock autohide -bool true
+    echo "  Enabled autohide"
     KILL_DOCK=true
 fi
 if $KILL_DOCK; then
     killall Dock
 fi 
+
+echo "Setting up spaces"
+if ! defaults read com.apple.spaces spans-displays &> /dev/null; then
+    defaults write com.apple.spaces spans-displays -bool true
+    echo "  Enabled span displays"
+    killall SystemUIServer
+fi
 
 echo "Done!"
