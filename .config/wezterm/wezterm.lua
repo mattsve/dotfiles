@@ -6,9 +6,9 @@ config.initial_rows = 30
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Catppuccin Frappe"
+    return "Modus-Vivendi-Tinted"
   else
-    return "Catppuccin Latte"
+    return "Modus-Operandi-Tinted"
   end
 end
 

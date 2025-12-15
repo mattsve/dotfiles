@@ -53,4 +53,6 @@ cask "moom"
 mas "WireGuard", id: 1451685025
 
 vscode "catppuccin.catppuccin-vsc"
+vscode "wroyca.modus"
 vscode "mechatroner.rainbow-csv"
+vscode "zoellner.openapi-preview"
