@@ -48,7 +48,7 @@ cask "netnewswire"
 cask "heynote"
 cask "karabiner-elements"
 cask "shortcat"
-cask "nikitabobko/tap/aerospace"
+cask "moom"
 
 mas "WireGuard", id: 1451685025
 
