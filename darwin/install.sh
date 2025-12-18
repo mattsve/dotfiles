@@ -59,6 +59,7 @@ if $KILL_DOCK; then
     killall Dock
 fi 
 
+echo "Setting up services"
 brew services start borders
 
 echo "Done!"

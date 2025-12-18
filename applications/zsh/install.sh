@@ -17,3 +17,10 @@ if ! grep -Fxq 'FPATH=$(brew --prefix)/share/zsh-completions:$FPATH' "${HOME}/.z
     chmod go-w "${HOMEBREW_PREFIX}/share"
     chmod -R go-w "${HOMEBREW_PREFIX}/share/zsh"
 fi
+
+if [[ ! -f "${HOME}/.zshenv" ]]; then
+    touch "${HOME}/.zshenv"
+fi
+if ! grep -Fxq 'export XDG_CONFIG_HOME=$HOME/.config' "${HOME}/.zshenv"; then
+    echo 'export XDG_CONFIG_HOME=$HOME/.config' >> "${HOME}/.zshenv"
+fi
