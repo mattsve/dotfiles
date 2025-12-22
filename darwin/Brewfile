@@ -49,6 +49,7 @@ cask "heynote"
 cask "karabiner-elements"
 cask "shortcat"
 cask "moom"
+cask "menuwhere"
 
 mas "WireGuard", id: 1451685025
 
