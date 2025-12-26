@@ -41,6 +41,7 @@ source "$ITEM_DIR/display_change.sh"
 items=()
 ##### Adding Left Items #####
 POSITION="left"
+source "$ITEM_DIR/aerospace_mode.sh"
 source "$ITEM_DIR/aerospace.sh"
 source "$ITEM_DIR/front_app.sh"
 
