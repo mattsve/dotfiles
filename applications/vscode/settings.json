@@ -3,5 +3,7 @@
   "editor.semanticHighlighting.enabled": true,
   "terminal.integrated.minimumContrastRatio": 1,
   "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Modus Operandi Tinted"
+  "workbench.colorTheme": "Modus Operandi Tinted",
+  "editor.fontFamily": "'BlexMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.accessibilitySupport": "off"
 }

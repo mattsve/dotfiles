@@ -12,6 +12,8 @@ local function scheme_for_appearance(appearance)
   end
 end
 
+config.font = wezterm.font 'BlexMono Nerd Font Mono'
+
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 config.default_cursor_style = 'BlinkingBlock'
 config.cursor_blink_ease_in = "Constant"
