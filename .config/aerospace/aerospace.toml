@@ -9,7 +9,7 @@ config-version = 2
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
 ]
 
 # Start AeroSpace at login
@@ -35,11 +35,13 @@ default-root-container-orientation = 'auto'
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
+on-focus-changed = [
+    'exec-and-forget sketchybar --trigger aerospace_focus_change'
+]
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = [
-    'move-mouse monitor-lazy-center', 
-    'exec-and-forget sketchybar --trigger aerospace_focus_change'
+    'move-mouse monitor-lazy-center'
 ]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -147,16 +149,16 @@ on-mode-changed = [
     alt-cmd-s = 'workspace S'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-cmd-ctrl-1 = 'move-node-to-workspace 1'
-    alt-cmd-ctrl-2 = 'move-node-to-workspace 2'
-    alt-cmd-ctrl-3 = 'move-node-to-workspace 3'
-    alt-cmd-ctrl-4 = 'move-node-to-workspace 4'
-    alt-cmd-ctrl-5 = 'move-node-to-workspace 5'
-    alt-cmd-ctrl-6 = 'move-node-to-workspace 6'
-    alt-cmd-ctrl-7 = 'move-node-to-workspace 7'
-    alt-cmd-ctrl-8 = 'move-node-to-workspace 8'
-    alt-cmd-ctrl-9 = 'move-node-to-workspace 9'
-    alt-cmd-ctrl-s = 'move-node-to-workspace S'
+    alt-cmd-ctrl-1 = ['move-node-to-workspace 1', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-2 = ['move-node-to-workspace 2', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-3 = ['move-node-to-workspace 3', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-4 = ['move-node-to-workspace 4', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-5 = ['move-node-to-workspace 5', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-6 = ['move-node-to-workspace 6', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-7 = ['move-node-to-workspace 7', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-8 = ['move-node-to-workspace 8', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-9 = ['move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
+    alt-cmd-ctrl-s = ['move-node-to-workspace S', 'exec-and-forget sketchybar --trigger aerospace_node_moved']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -186,8 +188,7 @@ on-mode-changed = [
     alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-if.app-id = 'com.heynote.app'
-run = 'move-node-to-workspace S'
+run = 'exec-and-forget sketchybar --trigger aerospace_window_detected'
 
 [[on-window-detected]]
 if.app-id = 'com.cisco.anyconnect.gui'

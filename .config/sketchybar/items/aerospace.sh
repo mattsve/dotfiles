@@ -1,26 +1,35 @@
 #!/usr/bin/env bash
 # https://github.com/anatoli-tsinovoy/dotfiles
 
-read -a AS_TO_SB <<<"$(sketchybar --query display_change | jq -r '.label.value')"
-AEROSPACE_FOCUSED_WS=$(aerospace list-workspaces --focused)
-ALL_AS_WS_AS_MON=$(aerospace list-workspaces --all --format '%{workspace} %{monitor-id}')
-
 items+=(
     --add event aerospace_workspace_change
     --add event aerospace_focus_change
     --add event aerospace_monitor_move
+    --add event aerospace_node_moved
+    --add event aerospace_window_detected
 )
-while read -r i as_monitor; do
-    sb_monitor=${AS_TO_SB[(($as_monitor - 1))]}
-    sid=$i
-    items+=(
-        --add item space.$sid $POSITION
-        --set space.$sid label="$sid" display="$sb_monitor" script="$PLUGIN_DIR/aerospace.sh"
-        --subscribe space.$sid aerospace_workspace_change
+while read -r ws; do
+    item=(
+        icon="$ws"
+        label.font="sketchybar-app-font:Regular:14"
+        icon.highlight_color=$ACCENT_COLOR
+        background.drawing=on
+        background.color=$BAR_COLOR
+        background.border_color=$ACCENT_COLOR
+        background.border_width=0
     )
-    if [ $sid = $AEROSPACE_FOCUSED_WS ]; then
-        items+=(
-            --set space.$sid label.color=$ACCENT_COLOR
-        )
-    fi
-done <<<"${ALL_AS_WS_AS_MON}"
+    items+=(
+        --add item space.$ws $POSITION
+        --set space.$ws "${item[@]}"
+    )
+done < <(aerospace list-workspaces --all --format '%{workspace}')
+
+items+=(
+    --add item as_ws_changer $POSITION
+    --set as_ws_changer script="$PLUGIN_DIR/aerospace.sh" drawing=off updates=on
+    --subscribe as_ws_changer aerospace_workspace_change
+    --subscribe as_ws_changer aerospace_focus_change
+    --subscribe as_ws_changer aerospace_monitor_move
+    --subscribe as_ws_changer aerospace_node_moved
+    --subscribe as_ws_changer aerospace_window_detected
+)
