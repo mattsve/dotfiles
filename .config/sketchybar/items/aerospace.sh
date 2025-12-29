@@ -11,6 +11,7 @@ items+=(
 while read -r ws; do
     item=(
         icon="$ws"
+        icon.font="SF Pro:Regular:14.0"
         label.font="sketchybar-app-font:Regular:14"
         icon.highlight_color=$ACCENT_COLOR
         background.drawing=on
