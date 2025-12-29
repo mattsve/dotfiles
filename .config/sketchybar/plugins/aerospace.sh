@@ -3,11 +3,17 @@ read -a as_to_sb <<<"$(sketchybar --query display_change | jq -r '.label.value')
 args=()
 
 function update_applications() {
+  current_number_of_windows="$(aerospace list-windows --all | wc -l)"
+  previous_number_of_windows="$(sketchybar --query as_ws_changer | jq -r '.label.value')"
+  sketchybar --set as_ws_changer label="$current_number_of_windows"
+  
+  if [[ ${1:-false} = "false" && "$current_number_of_windows" = "$previous_number_of_windows" ]]; then
+    return
+  fi
+
   while read -r ws visible focused; do
     apps=()
-    while IFS='' read -r app; do
-      apps+=("$app")
-    done < <(aerospace list-windows --workspace "$ws" --format '%{app-name}')
+    IFS=$'\n' read -d '' -r -a apps < <(aerospace list-windows --workspace "$ws" --format '%{app-name}')
     if [[ "$visible" = "true" || "$focused" = "true" || ${#apps[@]} -gt 0 ]]; then drawing="on"; else drawing="off"; fi
     if [[ ${#apps[@]} -gt 0 ]]; then
       label="$($CONFIG_DIR/plugins/icon_map.sh "${apps[@]}")"
@@ -54,7 +60,7 @@ if [[ "$SENDER" = "forced" ]]; then
 fi
 
 if [[ "$SENDER" = "aerospace_node_moved" || "$SENDER" = "aerospace_window_detected" ]]; then
-  update_applications
+  update_applications "true"
 fi
 
 if [[ "$SENDER" = "aerospace_monitor_move" ]]; then
@@ -63,6 +69,10 @@ fi
 
 if [[ "$SENDER" = "aerospace_workspace_change" ]]; then
   update_workspace_focus
+fi
+
+if [[ "$SENDER" = "aerospace_focus_change" ]]; then
+  update_applications
 fi
 
 if [ ${#args[@]} -gt 0 ]; then

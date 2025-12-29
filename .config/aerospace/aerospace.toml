@@ -188,8 +188,9 @@ on-mode-changed = [
     alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-run = 'exec-and-forget sketchybar --trigger aerospace_window_detected'
+    check-further-callbacks = true
+    run = 'exec-and-forget sketchybar --trigger aerospace_window_detected'
 
 [[on-window-detected]]
-if.app-id = 'com.cisco.anyconnect.gui'
-run = 'layout floating'
+    if.app-id = 'com.cisco.anyconnect.gui'
+    run = 'layout floating'
