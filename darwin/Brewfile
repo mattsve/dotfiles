@@ -55,6 +55,8 @@ cask "nikitabobko/tap/aerospace"
 cask "font-hack-nerd-font"
 cask "font-blex-mono-nerd-font"
 cask "font-sketchybar-app-font"
+cask "font-sf-pro"
+cask "sf-symbols"
 
 mas "WireGuard", id: 1451685025
 

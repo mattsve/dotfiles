@@ -6,4 +6,4 @@ case ${SOURCE} in
 'org.unknown.keylayout.Swerty') LABEL='swerty' ;;
 esac
 
-sketchybar --set $NAME icon="" label="$LABEL"
+sketchybar --set $NAME icon="􀇳" label="$LABEL"
