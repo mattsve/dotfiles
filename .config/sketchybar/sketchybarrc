@@ -47,8 +47,8 @@ source "$ITEM_DIR/front_app.sh"
 
 ##### Adding Right Items #####
 POSITION="right"
-source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/focus.sh"
+source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/keyboard.sh"
