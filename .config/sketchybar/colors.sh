@@ -5,10 +5,8 @@
 
 
 export FG_COLOR=0xff000000
-
 export BAR_COLOR=0xfffbf7f0
 export ITEM_BG_COLOR=0xffc9b9b0
-export INACTIVE_BG_COLOR=0xffdfd5cf
 export ACCENT_COLOR=0xffa0132f
 
 # export FG_COLOR=0xffffffff

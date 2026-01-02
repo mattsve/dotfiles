@@ -18,6 +18,7 @@ while read -r ws; do
         background.color=$BAR_COLOR
         background.border_color=$ACCENT_COLOR
         background.border_width=0
+        background.corner_radius=8
     )
     items+=(
         --add item space.$ws $POSITION
