@@ -57,6 +57,7 @@ cask "font-blex-mono-nerd-font"
 cask "font-sketchybar-app-font"
 cask "font-sf-pro"
 cask "sf-symbols"
+cask "mqtt-explorer"
 
 mas "WireGuard", id: 1451685025
 
