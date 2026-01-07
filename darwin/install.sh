@@ -64,21 +64,7 @@ if $KILL_DOCK; then
     killall Dock
 fi 
 
-echo "Setting up SystemUIServer"
-Kill_SystemUIServer=false
-if ! defaults read com.apple.spaces spans-displays &> /dev/null; then
-    defaults write com.apple.spaces spans-displays -bool true
-    echo "  Enabled spaces to span displays"
-    Kill_SystemUIServer=true
-fi
-if $Kill_SystemUIServer; then
-    killall SystemUIServer
-fi
-
 echo "Setting up services"
 brew services start borders
-brew services start sketchybar
 
-echo "Manual steps:"
-echo "   System Settings -> Menu Bar -> Automatically hide and show the menu bar -> Always"
 echo "Done!"

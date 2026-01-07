@@ -14,7 +14,6 @@ brew "htop"
 brew "thefuck"
 brew "gh"
 brew "borders"
-brew "sketchybar"
 
 cask "1password"
 cask "1password-cli"
@@ -49,14 +48,12 @@ cask "netnewswire"
 cask "heynote"
 cask "karabiner-elements"
 cask "shortcat"
-cask "moom"
 cask "menuwhere"
-cask "nikitabobko/tap/aerospace"
 cask "font-hack-nerd-font"
 cask "font-blex-mono-nerd-font"
-cask "font-sketchybar-app-font"
 cask "font-sf-pro"
 cask "sf-symbols"
+cask "bentobox"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828
