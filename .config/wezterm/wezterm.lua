@@ -55,4 +55,11 @@ config.colors = {
   }
 }
 config.use_fancy_tab_bar = true
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  config.default_prog = { "pwsh.exe", "-NoLogo" }
+  config.font_size = 11.0
+  config.window_frame.font_size = 11.0
+end
+
 return config
