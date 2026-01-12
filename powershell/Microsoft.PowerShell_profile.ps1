@@ -2,14 +2,7 @@ function IsWindows {
     return ($env:OS -eq "Windows_NT")
 }
 
-Import-Module posh-git
-
-if (Get-Command "oh-my-posh" -ErrorAction SilentlyContinue) {
-    oh-my-posh init pwsh --config "$home\.poshthemes\private.omp.json" | Invoke-Expression
-} else {
-    Import-Module oh-my-posh
-    Set-PoshPrompt -Theme "$home\.poshthemes\private.omp.json"
-}
+oh-my-posh init pwsh --config "$home/.dotfiles/applications/oh-my-posh/configuration.omp.json" | Invoke-Expression
 
 $env:POSH_GIT_ENABLED = $true
 
@@ -45,4 +38,4 @@ if (Test-Path "$home\.pwsh_extra.ps1") {
     . "$home\.pwsh_extra.ps1"
 }
 
-$PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue
+$PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue + $PSStyle.Bold
