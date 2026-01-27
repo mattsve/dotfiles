@@ -54,6 +54,7 @@ cask "font-blex-mono-nerd-font"
 cask "font-sf-pro"
 cask "sf-symbols"
 cask "bentobox"
+brew "anomalyco/tap/opencode"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828
