@@ -5,5 +5,7 @@
   "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Modus Operandi Tinted",
   "editor.fontFamily": "'BlexMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.editor.empty.hint": "hidden"
 }
