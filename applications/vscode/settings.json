@@ -7,5 +7,14 @@
   "editor.fontFamily": "'BlexMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.accessibilitySupport": "off",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://opencode.ai/": true,
+    "https://models.dev": true
+  }
 }
