@@ -12,3 +12,11 @@ if [[ ! -L "$SETTINGS_FILE" ]]; then
     rm -f "$SETTINGS_FILE"
     ln -s "${SCRIPT_DIR}/settings.json" "$SETTINGS_FILE"
 fi
+
+if [[ ! -f "${HOME}/.zshenv" ]]; then
+    touch "${HOME}/.zshenv"
+fi
+if ! grep -Fxq 'export EDITOR="code --wait"' "${HOME}/.zshenv"; then
+    echo 'export EDITOR="code --wait"' >> "${HOME}/.zshenv"
+fi
+
