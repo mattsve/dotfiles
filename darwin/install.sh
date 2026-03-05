@@ -60,6 +60,12 @@ if ! defaults read com.apple.dock expose-group-apps &> /dev/null; then
     echo "  Enabled grouping of windows in app exposé"
     KILL_DOCK=true
 fi
+if [[ ! "$(defaults read com.apple.dock orientation)" == "left" ]]; then
+    defaults write com.apple.dock orientation left
+    echo "  Moved dock to the left"
+    KILL_DOCK=true
+fi
+
 if $KILL_DOCK; then
     killall Dock
 fi 
