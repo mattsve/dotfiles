@@ -83,6 +83,30 @@ if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag
     defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
     echo "  Enabled three finger drag"
 fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture 2>/dev/null)" != "2" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+    echo "  Set four finger horizontal swipe gesture"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadFourFingerPinchGesture 2>/dev/null)" != "2" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerPinchGesture -int 2
+    echo "  Set four finger pinch gesture"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadFourFingerVertSwipeGesture 2>/dev/null)" != "2" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerVertSwipeGesture -int 2
+    echo "  Set four finger vertical swipe gesture"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+    echo "  Disabled three finger horizontal swipe gesture"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
+    echo "  Disabled three finger tap gesture"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
+    echo "  Disabled three finger vertical swipe gesture"
+fi
 
 echo "Setting up services"
 brew services start borders
