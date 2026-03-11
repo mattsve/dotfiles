@@ -70,6 +70,20 @@ if $KILL_DOCK; then
     killall Dock
 fi
 
+echo "Setting up trackpad"
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad DragLock 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad DragLock -bool false
+    echo "  Disabled drag lock"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad Dragging 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
+    echo "  Disabled dragging"
+fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag 2>/dev/null)" != "1" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+    echo "  Enabled three finger drag"
+fi
+
 echo "Setting up services"
 brew services start borders
 
