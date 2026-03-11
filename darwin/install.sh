@@ -131,6 +131,26 @@ if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad Trackp
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0
     echo "  [BT] Disabled three finger vertical swipe gesture"
 fi
+if [[ "$(defaults -currentHost read NSGlobalDomain com.apple.mouse.tapBehavior 2>/dev/null)" != "1" ]]; then
+    defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    echo "  [currentHost] Enabled tap to click"
+fi
+if [[ "$(defaults -currentHost read NSGlobalDomain com.apple.trackpad.threeFingerDragGesture 2>/dev/null)" != "1" ]]; then
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerDragGesture -bool true
+    echo "  [currentHost] Enabled three finger drag gesture"
+fi
+if [[ "$(defaults -currentHost read NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 0
+    echo "  [currentHost] Disabled three finger horizontal swipe gesture"
+fi
+if [[ "$(defaults -currentHost read NSGlobalDomain com.apple.trackpad.threeFingerTapGesture 2>/dev/null)" != "0" ]]; then
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerTapGesture -int 0
+    echo "  [currentHost] Disabled three finger tap gesture"
+fi
+if [[ "$(defaults -currentHost read NSGlobalDomain com.apple.trackpad.threeFingerVertSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerVertSwipeGesture -int 0
+    echo "  [currentHost] Disabled three finger vertical swipe gesture"
+fi
 
 echo "Setting up appearance"
 if defaults read NSGlobalDomain AppleInterfaceStyle &>/dev/null; then
