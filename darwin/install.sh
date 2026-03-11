@@ -111,6 +111,26 @@ if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVert
     defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
     echo "  Disabled three finger vertical swipe gesture"
 fi
+if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking 2>/dev/null)" != "1" ]]; then
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    echo "  [BT] Enabled clicking"
+fi
+if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag 2>/dev/null)" != "1" ]]; then
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+    echo "  [BT] Enabled three finger drag"
+fi
+if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+    echo "  [BT] Disabled three finger horizontal swipe gesture"
+fi
+if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
+    echo "  [BT] Disabled three finger tap gesture"
+fi
+if [[ "$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture 2>/dev/null)" != "0" ]]; then
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0
+    echo "  [BT] Disabled three finger vertical swipe gesture"
+fi
 
 echo "Setting up appearance"
 if defaults read NSGlobalDomain AppleInterfaceStyle &>/dev/null; then
