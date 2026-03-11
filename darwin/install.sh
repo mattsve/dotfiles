@@ -1,5 +1,5 @@
 #!/bin/bash
-set -u
+set -euo pipefail
 
 if ! command -v brew &> /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -8,16 +8,16 @@ if ! command -v brew &> /dev/null; then
 fi
 
 if [[ ! -d "${HOME}/.dotfiles/" ]]; then
-    /opt/homebrew/bin/brew install —cask 1password
-    echo "Set upp 1password and enable ssh agent"
-    read -p "Press enter to continue"
-    git clone git@github.com:mattsve/dotfiles.git ~/.dotfiles 
+    /opt/homebrew/bin/brew install --cask 1password
+    echo "Set up 1password and enable ssh agent"
+    read -rp "Press enter to continue"
+    git clone git@github.com:mattsve/dotfiles.git ~/.dotfiles
 
     echo "Run this command to add Homebrew to your PATH:"
     echo '    eval "$(/opt/homebrew/bin/brew shellenv)"'
     echo "Run this command to bootstrap the machine"
     echo '    ~/.dotfiles/darwin/install.sh'
-    exit 0;
+    exit 0
 fi
 
 echo "Setting up sudo to use touch id"
@@ -39,28 +39,28 @@ brew bundle install --file "${SCRIPT_DIR}/Brewfile"
 
 echo "Setting up dock"
 KILL_DOCK=false
-if [[ ! "$(defaults read com.apple.dock persistent-apps)" == "(
+if [[ "$(defaults read com.apple.dock persistent-apps 2>/dev/null)" != "(
 )" ]]; then
     defaults write com.apple.dock persistent-apps -array
     echo "  Cleared persistent apps"
     KILL_DOCK=true
 fi
-if ! defaults read com.apple.dock appswitcher-all-displays &> /dev/null; then
+if [[ "$(defaults read com.apple.dock appswitcher-all-displays 2>/dev/null)" != "1" ]]; then
     defaults write com.apple.dock appswitcher-all-displays -bool true
     echo "  Enabled app switcher on all displays"
     KILL_DOCK=true
 fi
-if ! defaults read com.apple.dock show-recents &> /dev/null; then
+if [[ "$(defaults read com.apple.dock show-recents 2>/dev/null)" != "0" ]]; then
     defaults write com.apple.dock show-recents -bool false
     echo "  Disabled recent applications"
     KILL_DOCK=true
 fi
-if ! defaults read com.apple.dock expose-group-apps &> /dev/null; then
+if [[ "$(defaults read com.apple.dock expose-group-apps 2>/dev/null)" != "1" ]]; then
     defaults write com.apple.dock expose-group-apps -bool true
     echo "  Enabled grouping of windows in app exposé"
     KILL_DOCK=true
 fi
-if [[ ! "$(defaults read com.apple.dock orientation)" == "left" ]]; then
+if [[ "$(defaults read com.apple.dock orientation 2>/dev/null)" != "left" ]]; then
     defaults write com.apple.dock orientation left
     echo "  Moved dock to the left"
     KILL_DOCK=true
@@ -68,7 +68,7 @@ fi
 
 if $KILL_DOCK; then
     killall Dock
-fi 
+fi
 
 echo "Setting up services"
 brew services start borders

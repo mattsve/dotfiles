@@ -1,13 +1,16 @@
 #!/bin/bash
-set -u
+set -euo pipefail
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+# shellcheck source=../lib.sh
+source "${SCRIPT_DIR}/../lib.sh"
 
 touch "${HOME}/.gitconfig"
 if ! grep -Fxq "[user]" "${HOME}/.gitconfig"; then
     {
-    echo "[user]"
-    echo "    name = Mattias Svensson"
-    echo "    email = 190869+mattsve@users.noreply.github.com"
+        echo "[user]"
+        echo "    name = Mattias Svensson"
+        echo "    email = 190869+mattsve@users.noreply.github.com"
     } >> "${HOME}/.gitconfig"
 fi
 

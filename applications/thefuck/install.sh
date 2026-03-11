@@ -1,11 +1,9 @@
 #!/bin/bash
-set -u
+set -euo pipefail
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-CONFIGURATION="${SCRIPT_DIR}/configuration.omp.json"
 
-if [[ ! -f "${HOME}/.zshrc" ]]; then
-    touch "${HOME}/.zshrc"
-fi
-if ! grep -Fxq "eval \$(thefuck --alias)" "${HOME}/.zshrc"; then
-    echo "eval \$(thefuck --alias)" >> "${HOME}/.zshrc"
-fi
+# shellcheck source=../lib.sh
+source "${SCRIPT_DIR}/../lib.sh"
+
+# Guard the eval so a missing thefuck binary does not break zsh startup
+append_if_missing "${HOME}/.zshrc" 'command -v thefuck &>/dev/null && eval "$(thefuck --alias)"'
