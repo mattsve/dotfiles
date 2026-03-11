@@ -21,6 +21,7 @@ macOS setup automation. Installs tools, configures apps, and symlinks config fil
 7. Runs each app installer in `applications/`
 8. Pulls secrets and config files from 1Password
 9. Configures the Dock
+10. Configure the touchpad
 
 ## Structure
 
