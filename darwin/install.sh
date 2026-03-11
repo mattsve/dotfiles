@@ -79,6 +79,10 @@ if [[ "$(defaults read com.apple.AppleMultitouchTrackpad Dragging 2>/dev/null)" 
     defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
     echo "  Disabled dragging"
 fi
+if [[ "$(defaults read com.apple.AppleMultitouchTrackpad Clicking 2>/dev/null)" != "1" ]]; then
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+    echo "  Enabled clicking"
+fi
 if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag 2>/dev/null)" != "1" ]]; then
     defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
     echo "  Enabled three finger drag"
