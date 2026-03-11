@@ -112,6 +112,16 @@ if [[ "$(defaults read com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVert
     echo "  Disabled three finger vertical swipe gesture"
 fi
 
+echo "Setting up appearance"
+if defaults read NSGlobalDomain AppleInterfaceStyle &>/dev/null; then
+    defaults delete NSGlobalDomain AppleInterfaceStyle
+    echo "  Deleted AppleInterfaceStyle"
+fi
+if defaults read NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically &>/dev/null; then
+    defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
+    echo "  Deleted AppleInterfaceStyleSwitchesAutomatically"
+fi
+
 echo "Setting up services"
 brew services start borders
 
