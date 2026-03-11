@@ -2,6 +2,8 @@
 
 macOS setup automation. Installs tools, configures apps, and symlinks config files.
 
+> **Note:** This setup is personal and tailored specifically to my own account and environment. It cannot be used as-is by anyone else.
+
 ## Install
 
 ```sh
