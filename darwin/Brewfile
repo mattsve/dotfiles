@@ -57,6 +57,7 @@ cask "macwhisper"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828
+mas "Ethernet Menu", id: 1549412235
 
 vscode "wroyca.modus"
 vscode "mechatroner.rainbow-csv"
