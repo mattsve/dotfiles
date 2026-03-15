@@ -17,6 +17,7 @@ brew "gh"
 brew "felixkratz/formulae/borders"
 brew "uv"
 brew "anomalyco/tap/opencode"
+brew "node"
 
 cask "1password"
 cask "1password-cli"
