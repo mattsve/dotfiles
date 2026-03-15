@@ -16,5 +16,6 @@
     "https://json-schema.org/": true,
     "https://opencode.ai/": true,
     "https://models.dev": true
-  }
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false
 }
