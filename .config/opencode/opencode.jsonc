@@ -18,7 +18,9 @@
       "echo *": "allow",
       "grep *": "allow",
       "head *": "allow",
-      "tail *": "allow"
+      "tail *": "allow",
+      "git status *": "allow",
+      "git diff *":"allow"
     }
    }
 }
