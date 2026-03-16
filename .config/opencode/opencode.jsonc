@@ -20,7 +20,9 @@
       "head *": "allow",
       "tail *": "allow",
       "git status *": "allow",
-      "git diff *":"allow"
+      "git diff *":"allow",
+      "git log *":"allow",
+      "git show *": "allow"
     }
    }
 }
