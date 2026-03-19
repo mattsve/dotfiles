@@ -17,8 +17,5 @@
     "https://opencode.ai/": true,
     "https://models.dev": true
   },
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "markdownlint.config": {
-    "MD024": false
-  }
+  "editor.unicodeHighlight.nonBasicASCII": false
 }
