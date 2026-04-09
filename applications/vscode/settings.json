@@ -17,5 +17,6 @@
     "https://opencode.ai/": true,
     "https://models.dev": true
   },
-  "editor.unicodeHighlight.nonBasicASCII": false
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "claudeCode.preferredLocation": "panel"
 }
