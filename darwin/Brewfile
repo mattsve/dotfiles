@@ -53,6 +53,7 @@ cask "bentobox"
 cask "elgato-stream-deck"
 cask "macwhisper"
 cask "claude-code"
+cask "handbrake-app"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828
