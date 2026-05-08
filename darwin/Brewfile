@@ -16,6 +16,8 @@ brew "gh"
 brew "felixkratz/formulae/borders"
 brew "uv"
 brew "node"
+brew "oven-sh/bun/bun"
+brew "admesh"
 
 cask "1password"
 cask "1password-cli"
