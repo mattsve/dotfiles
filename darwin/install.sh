@@ -50,6 +50,6 @@ if defaults read NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically &>/dev/
 fi
 
 echo "Setting up services"
-brew services start borders
+# brew services start borders
 
 echo "Done!"
