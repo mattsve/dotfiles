@@ -5,6 +5,8 @@ return {
       sources = {
         explorer = {
           jump = { close = true },
+          hidden = true,
+          ignored = true,
         },
       },
     },
