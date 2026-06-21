@@ -1,5 +1,6 @@
-tap "isen-ng/dotnet-sdk-versions"
-tap "FelixKratz/formulae"
+tap "isen-ng/dotnet-sdk-versions", trusted: true
+tap "FelixKratz/formulae", trusted: true
+tap "oven-sh/bun", trusted: true
 
 brew "mas"
 brew "oh-my-posh"
