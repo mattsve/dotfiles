@@ -30,6 +30,7 @@ brew "ghostscript"
 brew "tree-sitter-cli"
 brew "mistral-vibe"
 brew "ansible"
+brew "opentofu"
 
 cask "1password"
 cask "1password-cli"
@@ -68,6 +69,7 @@ cask "elgato-stream-deck"
 cask "macwhisper"
 cask "handbrake-app"
 cask "autodesk-fusion"
+cask "claude-code"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828
