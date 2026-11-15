@@ -32,6 +32,7 @@ brew "mistral-vibe"
 brew "ansible"
 brew "opentofu"
 brew "pandoc"
+brew "yq"
 
 cask "1password"
 cask "1password-cli"
@@ -71,6 +72,7 @@ cask "macwhisper"
 cask "handbrake-app"
 cask "autodesk-fusion"
 cask "claude-code"
+cask "heroic"
 
 mas "WireGuard", id: 1451685025
 mas "MQTT Explorer", id: 1455214828

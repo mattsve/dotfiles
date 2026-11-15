@@ -33,6 +33,9 @@ config.window_frame = {
 }
 
 config.colors = {
+	indexed = {
+		[118] = "#006800",
+	},
 	tab_bar = {
 		active_tab = {
 			bg_color = "#c9b9b0",
